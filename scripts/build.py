@@ -7,10 +7,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 SITE_FILE = ROOT / "data" / "site.json"
 LOCATIONS_FILE = ROOT / "data" / "locations.json"
+FAQ_FILE = ROOT / "data" / "faq.json"
 ASSETS = ROOT / "assets"
 
 site = json.loads(SITE_FILE.read_text(encoding="utf-8"))
 locations = json.loads(LOCATIONS_FILE.read_text(encoding="utf-8"))
+faqs = json.loads(FAQ_FILE.read_text(encoding="utf-8"))
 region = locations["region"]
 districts = locations["districts"]
 services = site["services"]
@@ -47,15 +49,26 @@ def icon_for(slug):
     }.get(slug, "＋")
 
 
+def tel_href(value):
+    return "".join(ch for ch in str(value) if ch.isdigit() or ch == "+")
+
+
+def whatsapp_href(value):
+    digits = "".join(ch for ch in str(value) if ch.isdigit())
+    if digits.startswith("0"):
+        digits = "90" + digits[1:]
+    return digits
+
+
 def contact_block(depth):
     phone = site.get("phone", "").strip()
     whatsapp = site.get("whatsapp", "").strip()
     email = site.get("email", "").strip()
     items = []
     if phone:
-        items.append(f'<a class="button orange" href="tel:{esc(phone)}">Telefonla Ara</a>')
+        items.append(f'<a class="button orange" href="tel:{esc(tel_href(phone))}">Telefonla Ara</a>')
     if whatsapp:
-        items.append(f'<a class="button secondary" href="https://wa.me/{esc(whatsapp)}" target="_blank" rel="noopener">WhatsApp</a>')
+        items.append(f'<a class="button secondary" href="https://wa.me/{esc(whatsapp_href(whatsapp))}" target="_blank" rel="noopener">WhatsApp</a>')
     if email:
         items.append(f'<a class="button secondary" href="mailto:{esc(email)}">E-posta Gönder</a>')
     if not items:
@@ -63,7 +76,45 @@ def contact_block(depth):
     return "".join(items)
 
 
-def page(title, description, content, path="", depth=0):
+def floating_contact(depth):
+    phone = site.get("phone", "").strip()
+    whatsapp = site.get("whatsapp", "").strip()
+    items = []
+    if whatsapp and whatsapp_href(whatsapp):
+        items.append(f'<a class="floating-button floating-whatsapp" href="https://wa.me/{esc(whatsapp_href(whatsapp))}" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim">☏ <span>WhatsApp</span></a>')
+    if phone and tel_href(phone):
+        items.append(f'<a class="floating-button floating-phone" href="tel:{esc(tel_href(phone))}" aria-label="Telefonla ara">☎ <span>Ara</span></a>')
+    return f'<div class="floating-contact" aria-label="Hızlı iletişim">{"".join(items)}</div>' if items else ""
+
+
+def faq_items(limit=None):
+    items = faqs if limit is None else faqs[:limit]
+    return "".join(
+        f'<details class="faq-item"><summary>{esc(item["question"])}</summary><div class="faq-answer"><p>{esc(item["answer"])}</p></div></details>'
+        for item in items
+    )
+
+
+def faq_schema():
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": item["question"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["answer"],
+                },
+            }
+            for item in faqs
+        ],
+    }
+    return f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")}</script>'
+
+
+def page(title, description, content, path="", depth=0, extra_head=""):
     prefix = root_prefix(depth)
     robots = "index, follow" if site.get("indexable") else "noindex, nofollow"
     service_links = "".join(
@@ -85,6 +136,7 @@ def page(title, description, content, path="", depth=0):
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:url" content="{esc(canonical(path))}">
   <link rel="stylesheet" href="{prefix}styles.css">
+  {extra_head}
 </head>
 <body>
   <div class="site-top"><div class="container"><span><strong>{esc(region["name"])}</strong> ve ilçelerinde yapı dekorasyon hizmetleri</span><span>Pilot site altyapısı</span></div></div>
@@ -97,6 +149,7 @@ def page(title, description, content, path="", depth=0):
       <button class="menu-button" data-menu-button aria-label="Menüyü aç" aria-expanded="false">☰</button>
       <nav class="nav-links" data-nav-links>
         <a href="{prefix}#hizmetler">Hizmetler</a>
+        <a href="{href("sss", depth)}">SSS</a>
         <a href="{prefix}#bolgeler">Hizmet Bölgeleri</a>
         <a href="{prefix}#surec">Süreç</a>
         <a href="{prefix}#iletisim">İletişim</a>
@@ -110,6 +163,7 @@ def page(title, description, content, path="", depth=0):
       <span>Fayans · Duvar · Çatı · Alçı · Boya</span>
     </div>
   </footer>
+  {floating_contact(depth)}
   <script src="{prefix}script.js" defer></script>
 </body>
 </html>'''
@@ -179,6 +233,18 @@ def build_home():
       <div class="container">
         <div class="section-head"><div><div class="section-kicker">Hizmet bölgeleri</div><h2>Eskişehir ve 14 ilçesi.</h2></div><p>İlçe sayfalarını gerçek hizmet kapsamına göre genişleteceğiz. Mahalle seviyesine geçmeden önce her bölgede hizmet verildiğini doğrulayacağız.</p></div>
         <div class="location-grid">{locations_html}</div>
+      </div>
+    </section>
+
+    <section class="section faq-teaser" id="sss">
+      <div class="container faq-teaser-grid">
+        <div>
+          <div class="section-kicker">Sıkça sorulanlar</div>
+          <h2>İşe başlamadan önce merak edilenler.</h2>
+          <p class="lead">Hizmet kapsamı, teklif süreci ve uygulama öncesi hazırlıklarla ilgili kısa cevapları bir araya getirdik.</p>
+          <div class="actions"><a class="button primary" href="sss/">Tüm SSS sayfasını incele</a></div>
+        </div>
+        <div class="faq-preview">{faq_items(3)}</div>
       </div>
     </section>
 
@@ -253,6 +319,26 @@ def build_district(service, district):
     out.write_text(html_text, encoding="utf-8")
 
 
+def build_faq():
+    content = f'''
+  <main>
+    <div class="container breadcrumb"><a href="{href("", 0)}">Ana sayfa</a> / SSS</div>
+    <section class="page-hero"><div class="container"><div class="eyebrow">Eskişehir yapı dekorasyon</div><h1>Sıkça Sorulan Sorular</h1><p class="lead">Fayans, duvar, çatı, alçı ve boya badana hizmetleriyle ilgili en çok merak edilenleri kısa ve anlaşılır cevaplarla derledik.</p></div></section>
+    <section class="section"><div class="container faq-layout"><div class="faq-list">{faq_items()}</div><aside class="info-box"><h3>İşinizi konuşalım</h3><p>İşin türünü, bulunduğunuz ilçeyi ve yaklaşık alanı paylaşarak teklif sürecini başlatabilirsiniz.</p><div class="actions">{contact_block(0)}</div><div class="mini-links"><a href="{href("fayans-ustasi/" + region["slug"], 0)}">Fayans ustası sayfası →</a><a href="{href("boya-badana-ustasi/" + region["slug"], 0)}">Boya badana sayfası →</a></div></aside></div></section>
+  </main>'''
+    html_text = page(
+        f'SSS | {site["brand"]}',
+        f'{site["brand"]} hizmetleri hakkında sıkça sorulan sorular ve cevaplar.',
+        content,
+        "sss",
+        0,
+        faq_schema(),
+    )
+    out = DIST / "sss" / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html_text, encoding="utf-8")
+
+
 def build_robots():
     if site.get("indexable"):
         content = f'User-agent: *\nAllow: /\nSitemap: {site["domain"].rstrip("/")}/sitemap.xml\n'
@@ -265,7 +351,7 @@ def build_sitemap():
     if not site.get("indexable"):
         (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', encoding="utf-8")
         return
-    paths = [""]
+    paths = ["", "sss"]
     for service in services:
         paths.append(f'{service["slug"]}/{region["slug"]}')
         paths.extend(f'{service["slug"]}/{region["slug"]}/{d["slug"]}' for d in districts)
@@ -293,6 +379,7 @@ def main():
     if site.get("custom_domain"):
         (DIST / "CNAME").write_text(site["custom_domain"].strip() + "\n", encoding="utf-8")
     build_home()
+    build_faq()
     for service in services:
         build_service(service)
         for district in districts:
