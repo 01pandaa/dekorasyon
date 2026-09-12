@@ -290,6 +290,8 @@ def main():
     DIST.mkdir(parents=True, exist_ok=True)
     shutil.copy2(ASSETS / "styles.css", DIST / "styles.css")
     shutil.copy2(ASSETS / "script.js", DIST / "script.js")
+    if site.get("custom_domain"):
+        (DIST / "CNAME").write_text(site["custom_domain"].strip() + "\n", encoding="utf-8")
     build_home()
     for service in services:
         build_service(service)
