@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Eskişehir'de hangi yapı dekorasyon hizmetleri veriliyor?",
+    "answer": "Bu sitede fayans, duvar, çatı, alçı ve boya badana işleri için hizmet başlıkları yer alır. Yapılacak işin kapsamı, alanın durumu ve malzeme seçimi teklif öncesinde netleştirilir."
+  },
+  {
+    "question": "Fayans ustası ararken nelere dikkat etmeliyim?",
+    "answer": "Yüzey hazırlığı, kullanılacak fayans ve yapıştırıcı, derz uygulaması, süpürgelik detayları ve teslim kapsamı işe başlamadan önce konuşulmalıdır. Alanın fotoğrafları ve yaklaşık ölçüleri ön değerlendirmeyi kolaylaştırır."
+  },
+  {
+    "question": "Duvar işi için teklif alırken hangi bilgiler gerekir?",
+    "answer": "Duvarın yapılacağı ilçe, yaklaşık uzunluk ve yükseklik, mevcut zeminin durumu, kullanılacak malzeme ve işin yeni yapım mı yoksa onarım mı olduğu belirtilmelidir."
+  },
+  {
+    "question": "Çatı onarımında hangi konular değerlendirilir?",
+    "answer": "Su alma noktaları, çatı kaplaması, oluklar, yalıtım, eğim ve gerekli onarım kapsamı birlikte değerlendirilir. Çatı işlerinde yalnızca görünen bölgeye değil, sorunun kaynağına da bakmak önemlidir."
+  },
+  {
+    "question": "Boya badana öncesi hangi hazırlıklar yapılır?",
+    "answer": "Yüzeydeki çatlak, kabarma ve dökülmeler kontrol edilir. Gerekli durumlarda tamir, zımpara ve astar uygulaması yapılır; boya seçimi yüzeyin ve alanın kullanımına göre belirlenir."
+  },
+  {
+    "question": "Alçı ve alçıpan işleri hangi alanlarda kullanılır?",
+    "answer": "Alçı ve alçıpan; yüzey düzeltme, bölme duvar, tavan uygulaması ve dekoratif çözümler için kullanılabilir. Uygun yöntem, alanın mevcut durumuna ve istenen sonuca göre değişir."
+  },
+  {
+    "question": "Hangi ilçelere hizmet veriliyor?",
+    "answer": "Site, Eskişehir'in ilçeleri için bölgesel hizmet sayfaları içerir. Bulunduğunuz ilçe, mahalle ve işin kapsamını iletişim sırasında belirterek hizmet uygunluğunu teyit edebilirsiniz."
+  },
+  {
+    "question": "Teklif almak için hangi bilgileri paylaşmalıyım?",
+    "answer": "Yapılacak işin türünü, bulunduğunuz ilçe ve mahalleyi, yaklaşık alanı, istediğiniz malzemeyi ve varsa mevcut durum fotoğraflarını paylaşmanız daha sağlıklı bir ön değerlendirme yapılmasına yardımcı olur."
+  },
+  {
+    "question": "Malzemeyi usta mı, müşteri mi temin eder?",
+    "answer": "Malzeme temini işin kapsamına, ürün tercihine ve teklif anlaşmasına göre değişebilir. Kullanılacak malzemeler ve temin sorumluluğu işe başlamadan önce açıkça belirtilmelidir."
+  },
+  {
+    "question": "Yapı dekorasyon işinin süresi ne kadar sürer?",
+    "answer": "Süre; alanın büyüklüğüne, hazırlık ihtiyacına, malzeme tedarikine ve yapılacak işin kapsamına göre değişir. Başlangıç öncesinde iş planı ve tahmini teslim takvimi konuşulur."
+  }
+]
