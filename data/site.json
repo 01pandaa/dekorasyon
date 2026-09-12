@@ -1,6 +1,7 @@
 {
   "brand": "Eskişehir Yapı Dekorasyon",
-  "domain": "https://yapidekorasyon.online",
+  "domain": "https://www.yapidekorasyon.online",
+  "custom_domain": "www.yapidekorasyon.online",
   "region": "Eskişehir",
   "indexable": false,
   "tagline": "Sağlam işçilik, temiz teslim.",
