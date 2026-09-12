@@ -137,7 +137,7 @@ def location_cards(depth, service_slug=None):
 
 def build_home():
     cards = service_cards(0)
-    locations_html = location_cards(0)
+    locations_html = location_cards(0, services[0]["slug"])
     content = f'''
   <main>
     <section class="hero">
