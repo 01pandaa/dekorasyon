@@ -1,0 +1,44 @@
+{
+  "brand": "Eskişehir Yapı Dekorasyon",
+  "domain": "https://yapidekorasyon.online",
+  "region": "Eskişehir",
+  "indexable": false,
+  "tagline": "Sağlam işçilik, temiz teslim.",
+  "description": "Eskişehir ve ilçelerinde fayans, duvar, çatı, alçı ve boya işleri için planlı yapı dekorasyon hizmetleri.",
+  "phone": "",
+  "whatsapp": "",
+  "email": "",
+  "address": "",
+  "services": [
+    {
+      "slug": "fayans-ustasi",
+      "name": "Fayans Ustası",
+      "short": "Fayans döşeme, yenileme ve tamamlayıcı uygulamalar.",
+      "aliases": ["fayansçı", "fayans döşeme ustası", "fayans ustası önerisi"]
+    },
+    {
+      "slug": "duvar-ustasi",
+      "name": "Duvar Ustası",
+      "short": "Duvar örme, onarım ve yapı içi duvar uygulamaları.",
+      "aliases": ["duvarcı", "duvar yapımı", "duvar onarımı"]
+    },
+    {
+      "slug": "cati-ustasi",
+      "name": "Çatı İşleri",
+      "short": "Çatı onarımı, bakım ve yenileme çalışmaları.",
+      "aliases": ["çatı ustası", "çatı tamiri", "çatı yenileme"]
+    },
+    {
+      "slug": "alci-ustasi",
+      "name": "Alçı Ustası",
+      "short": "Alçı uygulamaları ve yüzey hazırlığı.",
+      "aliases": ["alçı sıva", "alçıpan uygulaması", "alçı ustası"]
+    },
+    {
+      "slug": "boya-badana-ustasi",
+      "name": "Boya Badana Ustası",
+      "short": "İç ve dış cephe boya, badana ve yüzey yenileme.",
+      "aliases": ["boyacı", "boya ustası", "boya badana"]
+    }
+  ]
+}
