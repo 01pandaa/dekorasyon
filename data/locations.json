@@ -1,0 +1,22 @@
+{
+  "region": {
+    "name": "Eskişehir",
+    "slug": "eskisehir"
+  },
+  "districts": [
+    {"name": "Alpu", "slug": "alpu"},
+    {"name": "Beylikova", "slug": "beylikova"},
+    {"name": "Çifteler", "slug": "cifteler"},
+    {"name": "Günyüzü", "slug": "gunyuzu"},
+    {"name": "Han", "slug": "han"},
+    {"name": "İnönü", "slug": "inonu"},
+    {"name": "Mahmudiye", "slug": "mahmudiye"},
+    {"name": "Mihalgazi", "slug": "mihalgazi"},
+    {"name": "Mihalıççık", "slug": "mihaliccik"},
+    {"name": "Odunpazarı", "slug": "odunpazari"},
+    {"name": "Sarıcakaya", "slug": "saricakaya"},
+    {"name": "Seyitgazi", "slug": "seyitgazi"},
+    {"name": "Sivrihisar", "slug": "sivrihisar"},
+    {"name": "Tepebaşı", "slug": "tepebasi"}
+  ]
+}
