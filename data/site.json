@@ -3,7 +3,7 @@
   "domain": "https://www.yapidekorasyon.online",
   "custom_domain": "www.yapidekorasyon.online",
   "region": "Eskişehir",
-  "indexable": false,
+  "indexable": true,
   "tagline": "Sağlam işçilik, temiz teslim.",
   "description": "Eskişehir ve ilçelerinde fayans, duvar, çatı, alçı ve boya işleri için planlı yapı dekorasyon hizmetleri.",
   "phone": "05433719972",
