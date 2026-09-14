@@ -139,7 +139,7 @@ def page(title, description, content, path="", depth=0, extra_head=""):
   {extra_head}
 </head>
 <body>
-  <div class="site-top"><div class="container"><span><strong>{esc(region["name"])}</strong> ve ilçelerinde yapı dekorasyon hizmetleri</span><span>Pilot site altyapısı</span></div></div>
+  <div class="site-top"><div class="container"><span><strong>{esc(region["name"])}</strong> ve ilçelerinde yapı dekorasyon hizmetleri</span></div></div>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="{prefix}">
