@@ -322,16 +322,16 @@ def build_district(service, district):
 def build_faq():
     content = f'''
   <main>
-    <div class="container breadcrumb"><a href="{href("", 0)}">Ana sayfa</a> / SSS</div>
+    <div class="container breadcrumb"><a href="{href("", 1)}">Ana sayfa</a> / SSS</div>
     <section class="page-hero"><div class="container"><div class="eyebrow">Eskişehir yapı dekorasyon</div><h1>Sıkça Sorulan Sorular</h1><p class="lead">Fayans, duvar, çatı, alçı ve boya badana hizmetleriyle ilgili en çok merak edilenleri kısa ve anlaşılır cevaplarla derledik.</p></div></section>
-    <section class="section"><div class="container faq-layout"><div class="faq-list">{faq_items()}</div><aside class="info-box"><h3>İşinizi konuşalım</h3><p>İşin türünü, bulunduğunuz ilçeyi ve yaklaşık alanı paylaşarak teklif sürecini başlatabilirsiniz.</p><div class="actions">{contact_block(0)}</div><div class="mini-links"><a href="{href("fayans-ustasi/" + region["slug"], 0)}">Fayans ustası sayfası →</a><a href="{href("boya-badana-ustasi/" + region["slug"], 0)}">Boya badana sayfası →</a></div></aside></div></section>
+    <section class="section"><div class="container faq-layout"><div class="faq-list">{faq_items()}</div><aside class="info-box"><h3>İşinizi konuşalım</h3><p>İşin türünü, bulunduğunuz ilçeyi ve yaklaşık alanı paylaşarak teklif sürecini başlatabilirsiniz.</p><div class="actions">{contact_block(0)}</div><div class="mini-links"><a href="{href("fayans-ustasi/" + region["slug"], 1)}">Fayans ustası sayfası →</a><a href="{href("boya-badana-ustasi/" + region["slug"], 0)}">Boya badana sayfası →</a></div></aside></div></section>
   </main>'''
     html_text = page(
         f'SSS | {site["brand"]}',
         f'{site["brand"]} hizmetleri hakkında sıkça sorulan sorular ve cevaplar.',
         content,
         "sss",
-        0,
+        1,
         faq_schema(),
     )
     out = DIST / "sss" / "index.html"
