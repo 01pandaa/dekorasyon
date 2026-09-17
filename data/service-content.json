@@ -143,6 +143,42 @@
       {"question": "Küçük bir çatlak veya hasar için de görüşebilir miyim?", "answer": "Hasarın fotoğrafını, yaklaşık boyutunu ve bulunduğunuz ilçeyi paylaşabilirsiniz. Onarım yöntemi ve işin planlamaya uygunluğu mevcut durum değerlendirildikten sonra netleştirilir."}
     ]
   },
+  "karasiva-ustasi": {
+    "intro": "Yeni duvarlarda veya mevcut yüzeylerin yenilenmesinde karasıva; sonraki ince sıva, alçı, boya ya da kaplama uygulamaları için sağlam ve düzgün bir alt yüzey oluşturur. Kara sıva veya kaba sıva ustası olarak da aranan bu hizmet için uygulama alanını, yaklaşık metrekareyi ve yüzeyin mevcut durumunu paylaşabilirsiniz. Eskişehir karasıva ustası talebinizde iç veya dış mekân oluşu, sıva kalınlığı ve malzeme temini teklif öncesinde birlikte netleştirilir.",
+    "description": "Eskişehir karasıva ustası: iç ve dış duvarlarda çimento esaslı kaba sıva, yüzey düzeltme ve kaplama öncesi hazırlık. İlçe ve ölçü bilgisiyle teklif isteyin.",
+    "scope_title": "Karasıva işinde hangi uygulamalar değerlendirilir?",
+    "scope": [
+      "Tuğla, briket ve uygun beton yüzeylerde çimento sıva ustası işçiliğiyle kaba sıva uygulaması",
+      "İç ve dış duvarların sonraki kaplamaya hazırlanması",
+      "Yüzey bozuklukları, kot ve düşeylik farklarının uygulama kapsamında değerlendirilmesi",
+      "Köşe, kolon, kiriş, kapı ve pencere çevresi gibi birleşim detaylarının tamamlanması"
+    ],
+    "detail": "Karasıvanın kalınlığı ve uygulanacak harç, duvarın malzemesine, yüzey bozukluğuna ve alanın iç ya da dış mekân olmasına göre değişir. Gevşek parçalar, yoğun nem, su sızıntısı veya farklı malzemelerin birleştiği noktalar uygulama öncesinde ayrıca değerlendirilmelidir. Sonraki alçı, boya veya kaplama işinin beklentisini baştan paylaşmak, yüzey hazırlığı ve teslim seviyesinin doğru belirlenmesini sağlar.",
+    "process": [
+      {"title": "Yüzey ve ölçülerin değerlendirilmesi", "text": "Duvarların yaklaşık alanı, yüzey malzemesi, mevcut bozukluklar ve iç veya dış mekân koşulları belirlenir. Fotoğraflar ilk değerlendirmeyi kolaylaştırır."},
+      {"title": "Harç ve uygulama planı", "text": "Yüzey hazırlığı, gerekli sıva kalınlığı, köşe ve birleşim detayları ile malzeme ve taşıma sorumluluğu işin kapsamına göre netleştirilir."},
+      {"title": "Uygulama, kür ve teslim", "text": "Karışım, yüzeye uygulama ve mastarlama adımları planlanır. Hava koşulları, yüzeyin korunması ve sonraki kaplamaya geçiş zamanı teslim öncesinde konuşulur."}
+    ],
+    "pricing": [
+      "Sıva yapılacak toplam duvar alanı ve uygulama yüksekliği",
+      "Yüzeyin türü, mevcut durumu ve gereken sıva kalınlığı",
+      "İç veya dış mekân koşulları ile çalışma alanına erişim",
+      "Köşe, kolon, kiriş, kapı ve pencere çevresi detayları",
+      "Malzeme temini, taşıma, iskele ve tamamlayıcı işlerin kapsamı"
+    ],
+    "preparation": [
+      "Uygulama yapılacak duvarların yaklaşık en ve boy ölçülerini paylaşın.",
+      "Alan iç mekândaysa oda veya kat bilgisini, dış cephedeyse çalışma yüksekliğini belirtin.",
+      "Tuğla, briket, beton veya eski sıva yüzeylerini gösteren fotoğraflar hazırlayın.",
+      "Malzeme, taşıma, iskele ve sonraki alçı ya da boya işlerinin teklife dahil olup olmayacağını belirtin."
+    ],
+    "district_note": "Karasıva talebinizde yaklaşık metrekareyi, yüzey türünü, uygulama yüksekliğini ve işin iç veya dış mekânda olduğunu belirtin. İlçe ve mahalle bilgisiyle birlikte malzeme taşıma ve alana erişim koşullarını paylaşmanız keşif ve teklif planını kolaylaştırır.",
+    "faqs": [
+      {"question": "Karasıva ile alçı sıva aynı şey mi?", "answer": "Hayır. Karasıva genellikle çimento ve kum esaslı kaba sıva uygulamasıdır; duvarda dayanıklı bir alt yüzey oluşturur. Alçı sıva farklı bir malzeme ve uygulamadır. Hangi katmanların gerekli olduğu yüzeyin durumuna ve istenen sonuca göre belirlenir."},
+      {"question": "Karasıva fiyatı nasıl hesaplanır?", "answer": "Metrekare önemli olmakla birlikte yüzeyin bozukluğu, sıva kalınlığı, uygulama yüksekliği, köşe ve açıklık detayları, malzeme temini, taşıma ve iskele ihtiyacı toplam kapsamı etkiler. Teklifte bu kalemlerin dahil olup olmadığını netleştirin."},
+      {"question": "Karasıvadan sonra ne zaman alçı veya boya yapılır?", "answer": "Sonraki uygulamaya geçiş süresi sıva kalınlığına, kullanılan malzemeye, hava ve ortam koşullarına göre değişir. Yüzey yeterli kuruluğa ve sağlamlığa ulaşmadan kaplama yapılmamalı; ürün ve uygulama koşulları yerinde değerlendirilmelidir."}
+    ]
+  },
   "boya-badana-ustasi": {
     "intro": "Boya badana işinde renk seçimi kadar yüzey hazırlığı, eşyanın korunması ve teslim kapsamı da önemlidir. Eskişehir boya badana ustası talebinizde ev, oda veya iş yerinin durumunu paylaşarak başlayabilirsiniz. Duvar ve tavan boyası, gerekli yüzey tamirleri ve malzeme teminini teklif aşamasında birlikte netleştirelim.",
     "description": "Eskişehir boya badana ustası: iç ve dış cephe, yüzey hazırlığı ve boya işleri için kapsamı görüşün. İlçe ve alan bilgisiyle telefon veya WhatsApp'tan ulaşın.",
