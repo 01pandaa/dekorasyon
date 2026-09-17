@@ -49,7 +49,7 @@ def asset_url(name):
 
 
 def icon_for(slug):
-    return {"fayans-ustasi": "▦", "duvar-ustasi": "▤", "cati-ustasi": "⌂", "alci-ustasi": "◈", "boya-badana-ustasi": "◒"}[slug]
+    return {"fayans-ustasi": "▦", "duvar-ustasi": "▤", "cati-ustasi": "⌂", "alci-ustasi": "◈", "karasiva-ustasi": "▧", "boya-badana-ustasi": "◒"}[slug]
 
 
 def phone_digits(value):
@@ -102,7 +102,7 @@ def structured_data(title, description, path, breadcrumbs, service=None, faq=Fal
         graph.append({"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "item": canonical(item_path)} for i, (name, item_path) in enumerate(breadcrumbs, 1)]})
         graph[2]["breadcrumb"] = {"@id": url + "#breadcrumb"}
     if service:
-        graph.append({"@type": "Service", "@id": url + "#service", "name": title.split(" | ")[0], "serviceType": service["name"], "description": description, "url": url, "provider": {"@id": organization_id}, "areaServed": {"@type": "AdministrativeArea", "name": "Eskişehir"}})
+        graph.append({"@type": "Service", "@id": url + "#service", "name": title.split(" | ")[0], "alternateName": service.get("aliases", []), "serviceType": service["name"], "description": description, "url": url, "provider": {"@id": organization_id}, "areaServed": {"@type": "AdministrativeArea", "name": "Eskişehir"}})
         graph[2]["mainEntity"] = {"@id": url + "#service"}
     if faq:
         graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [{"@type": "Question", "name": item["question"], "acceptedAnswer": {"@type": "Answer", "text": item["answer"]}} for item in faqs]})
@@ -149,7 +149,7 @@ def page(title, description, content, path="", breadcrumbs=None, service=None, d
     </div>
   </header>
   {content}
-  <footer class="footer"><div class="container footer-inner"><span>© <span data-year>{date.today().year}</span> {esc(site['brand'])}</span><span>Fayans · Duvar · Çatı · Alçı · Boya</span><a href="tel:+{phone_digits(site['phone'])}" data-contact="phone" data-placement="footer">{esc(phone_display())}</a></div></footer>
+  <footer class="footer"><div class="container footer-inner"><span>© <span data-year>{date.today().year}</span> {esc(site['brand'])}</span><span>Fayans · Duvar · Çatı · Karasıva · Alçı · Boya</span><a href="tel:+{phone_digits(site['phone'])}" data-contact="phone" data-placement="footer">{esc(phone_display())}</a></div></footer>
   {floating_contact(service, district, path)}
   <script src="{esc(asset_url('script.js'))}" defer></script>
 </body>
@@ -246,16 +246,16 @@ def build_home():
     gallery = project_gallery()
     gallery_section = f'<section class="section"><div class="container">{gallery}</div></section>' if gallery else ''
     content = f'''<main id="icerik">
-<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Eskişehir Yapı Dekorasyon</div><h1>Eskişehir’de yapı ve <span>dekorasyon işleri.</span></h1><p class="lead">Fayans, duvar, çatı, alçı ve boya işleri için yapılacak işi, bulunduğunuz ilçeyi ve yaklaşık ölçüyü paylaşın; uygulama kapsamını ve teklif sürecini birlikte netleştirelim.</p><div class="actions"><a class="button primary" href="#teklif">İşinizi anlatın, teklif isteyin</a><a class="button secondary" href="#hizmetler">Hizmetleri incele</a></div><p class="hero-contact">Telefonla görüşmek için <a href="tel:+{phone_digits(site['phone'])}" data-contact="phone" data-placement="hero">{esc(phone_display())}</a></p></div>
-<div class="hero-card"><div class="blueprint" aria-hidden="true"></div><div class="hero-card-content"><div><span class="small-label">İşin başında netlik</span><h2>Önce ihtiyacı konuşalım.</h2><ol class="hero-steps"><li>Hizmet ve ilçe</li><li>Alan ve mevcut durum</li><li>Kapsam ve çalışma planı</li></ol></div><div class="hero-card-footer"><span>Fayans · Duvar · Çatı · Alçı · Boya</span></div></div></div></div></section>
-<section class="section" id="hizmetler"><div class="container"><div class="section-head"><div><div class="section-kicker">Hizmetlerimiz</div><h2>İhtiyacınıza göre beş hizmet.</h2></div><p>Her hizmetin hazırlığı, malzemesi ve uygulama süreci farklıdır. İlgili sayfada kapsamı, teklif öncesinde gereken bilgileri ve sık sorulan soruları inceleyebilirsiniz.</p></div><div class="cards">{service_cards()}</div></div></section>
+<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Eskişehir Yapı Dekorasyon</div><h1>Eskişehir’de yapı ve <span>dekorasyon işleri.</span></h1><p class="lead">Fayans, duvar, çatı, karasıva, alçı ve boya işleri için yapılacak işi, bulunduğunuz ilçeyi ve yaklaşık ölçüyü paylaşın; uygulama kapsamını ve teklif sürecini birlikte netleştirelim.</p><div class="actions"><a class="button primary" href="#teklif">İşinizi anlatın, teklif isteyin</a><a class="button secondary" href="#hizmetler">Hizmetleri incele</a></div><p class="hero-contact">Telefonla görüşmek için <a href="tel:+{phone_digits(site['phone'])}" data-contact="phone" data-placement="hero">{esc(phone_display())}</a></p></div>
+<div class="hero-card"><div class="blueprint" aria-hidden="true"></div><div class="hero-card-content"><div><span class="small-label">İşin başında netlik</span><h2>Önce ihtiyacı konuşalım.</h2><ol class="hero-steps"><li>Hizmet ve ilçe</li><li>Alan ve mevcut durum</li><li>Kapsam ve çalışma planı</li></ol></div><div class="hero-card-footer"><span>Fayans · Duvar · Çatı · Karasıva · Alçı · Boya</span></div></div></div></div></section>
+<section class="section" id="hizmetler"><div class="container"><div class="section-head"><div><div class="section-kicker">Hizmetlerimiz</div><h2>İhtiyacınıza göre altı hizmet.</h2></div><p>Her hizmetin hazırlığı, malzemesi ve uygulama süreci farklıdır. İlgili sayfada kapsamı, teklif öncesinde gereken bilgileri ve sık sorulan soruları inceleyebilirsiniz.</p></div><div class="cards">{service_cards()}</div></div></section>
 {gallery_section}
 <section class="section" id="surec"><div class="container split"><div><div class="section-kicker">Çalışma yaklaşımı</div><h2>İşin kapsamı baştan belli olsun.</h2><p class="lead">Bir teklifi değerlendirirken yapılacak uygulamayı, hazırlık işlerini ve malzeme teminini birlikte konuşmak gerekir.</p></div><div class="panel"><h3>Görüşmede neleri netleştirelim?</h3>{list_items(['İlçe, mahalle ve uygulama alanının mevcut durumu', 'Hazırlık, söküm ve tamamlayıcı işlerin kapsamı', 'Malzeme seçimi ve temin sorumluluğu', 'Uygun keşif zamanı, çalışma planı ve teslim kapsamı'])}</div></div></section>
 <section class="section" id="bolgeler"><div class="container"><div class="section-head"><div><div class="section-kicker">Eskişehir ilçeleri</div><h2>İlçenizi ve hizmetinizi seçin.</h2></div><p>İlçe başlığına dokunarak ilgili hizmete ulaşabilirsiniz. Mahalle, işin kapsamı ve ulaşım koşullarını paylaşarak hizmet uygunluğunu ve çalışma planını görüşmede teyit edin.</p></div><div class="district-grid">{home_districts()}</div></div></section>
 <section class="section faq-teaser"><div class="container faq-teaser-grid"><div><div class="section-kicker">Sıkça sorulanlar</div><h2>İşe başlamadan önce.</h2><p class="lead">Malzeme, teklif kapsamı ve uygulama hazırlığıyla ilgili sorularınız için kısa açıklamalar.</p><div class="actions"><a class="button primary" href="/sss/">Tüm soruları incele</a></div></div><div class="faq-preview">{faq_items(faqs[:3])}</div></div></section>
 <section class="section" id="iletisim"><div class="container">{quote_form()}</div></section>
 </main>'''
-    write_page('', page(f'{site["brand"]} | Fayans, Duvar, Çatı, Alçı ve Boya', site["description"], content))
+    write_page('', page(f'{site["brand"]} | Fayans, Duvar, Çatı, Karasıva, Alçı ve Boya', site["description"], content))
 
 
 def build_service(service):
@@ -300,8 +300,8 @@ def build_district(service, district):
 def build_faq():
     trail = [("Ana sayfa", ""), ("Sıkça Sorulan Sorular", "sss")]
     service_links = ''.join(f'<a href="{route_url(service_path(s))}">{esc(s["name"])} →</a>' for s in services)
-    content = f'''<main id="icerik">{breadcrumb(trail)}<section class="page-hero"><div class="container"><div class="eyebrow">Eskişehir Yapı Dekorasyon</div><h1>Sıkça Sorulan Sorular</h1><p class="lead">Fayans, duvar, çatı, alçı ve boya işleri için teklif, malzeme ve uygulama öncesi hazırlık soruları.</p></div></section><section class="section"><div class="container faq-layout"><div class="faq-list">{faq_items(faqs)}</div><aside class="info-box"><h2>İşinizi konuşalım</h2><p>İşin türünü, bulunduğunuz ilçeyi ve yaklaşık alanı paylaşarak başlayabilirsiniz.</p><div class="actions">{contact_block(placement='faq', path='sss')}</div><a class="inline-link" href="/#teklif">Teklif formuna geç →</a><div class="mini-links">{service_links}</div></aside></div></section></main>'''
-    write_page('sss', page('SSS | ' + site['brand'], 'Eskişehir yapı dekorasyon, fayans, duvar, çatı, alçı ve boya işleri: teklif, malzeme, hazırlık ve uygulama süreci hakkında sık sorulan sorular.', content, 'sss', trail, faq=True))
+    content = f'''<main id="icerik">{breadcrumb(trail)}<section class="page-hero"><div class="container"><div class="eyebrow">Eskişehir Yapı Dekorasyon</div><h1>Sıkça Sorulan Sorular</h1><p class="lead">Fayans, duvar, çatı, karasıva, alçı ve boya işleri için teklif, malzeme ve uygulama öncesi hazırlık soruları.</p></div></section><section class="section"><div class="container faq-layout"><div class="faq-list">{faq_items(faqs)}</div><aside class="info-box"><h2>İşinizi konuşalım</h2><p>İşin türünü, bulunduğunuz ilçeyi ve yaklaşık alanı paylaşarak başlayabilirsiniz.</p><div class="actions">{contact_block(placement='faq', path='sss')}</div><a class="inline-link" href="/#teklif">Teklif formuna geç →</a><div class="mini-links">{service_links}</div></aside></div></section></main>'''
+    write_page('sss', page('SSS | ' + site['brand'], 'Eskişehir yapı dekorasyon, fayans, duvar, çatı, karasıva, alçı ve boya işleri: teklif, malzeme, hazırlık ve uygulama süreci hakkında sık sorulan sorular.', content, 'sss', trail, faq=True))
 
 
 def build_robots_and_sitemap():
