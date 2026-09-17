@@ -1,7 +1,7 @@
 [
   {
     "question": "Eskişehir'de hangi yapı dekorasyon hizmetleri veriliyor?",
-    "answer": "Fayans döşeme ve yenileme, duvar işleri, çatı bakım ve onarımı, alçı uygulamaları ile boya badana talepleri için iletişime geçebilirsiniz. Yapılacak işin kapsamı, alanın durumu ve malzeme seçimi teklif öncesinde netleştirilir."
+    "answer": "Fayans döşeme ve yenileme, duvar işleri, çatı bakım ve onarımı, karasıva, alçı uygulamaları ile boya badana talepleri için iletişime geçebilirsiniz. Yapılacak işin kapsamı, alanın durumu ve malzeme seçimi teklif öncesinde netleştirilir."
   },
   {
     "question": "Fayans ustası ararken nelere dikkat etmeliyim?",
@@ -22,6 +22,10 @@
   {
     "question": "Alçı ve alçıpan işleri hangi alanlarda kullanılır?",
     "answer": "Alçı ve alçıpan; yüzey düzeltme, bölme duvar, tavan uygulaması ve dekoratif çözümler için kullanılabilir. Uygun yöntem, alanın mevcut durumuna ve istenen sonuca göre değişir."
+  },
+  {
+    "question": "Karasıva nedir ve hangi yüzeylere uygulanır?",
+    "answer": "Karasıva; tuğla, briket veya beton gibi yüzeylerde düzgün ve dayanıklı bir alt kat oluşturmak için kullanılan çimento esaslı kaba sıva uygulamasıdır. Yüzeyin durumu, iç veya dış mekân oluşu, uygulama kalınlığı ve sonraki kaplama planı işe başlamadan önce değerlendirilmelidir."
   },
   {
     "question": "Hangi ilçelere hizmet veriliyor?",
